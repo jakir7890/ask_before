@@ -21,7 +21,9 @@ class Webview extends StatelessWidget {
               children: [
                 Image.asset(AppConstant.logoUrl, scale: 3),
                 outlinedButton(AppConstant.topRightButtonText,
-                    width: Get.width * 0.4)
+                    width: Get.width * 0.4, onpress: () {
+                      
+                    },)
               ],
             ),
             Container(
@@ -50,7 +52,7 @@ class Webview extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30)),
                 child: Center(
                     child: AutoSizeText(
-                  AppConstant.cardText,
+                  AppConstant.cardText[2],
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontFamily: 'Trajan Pro',
@@ -71,7 +73,9 @@ class Webview extends StatelessWidget {
                 SizedBox(
                     width: Get.width * 0.35,
                     child: outlinedButton('Try another one',
-                        iconData: Icons.hardware, width: Get.width * 0.50))
+                        iconData: Icons.hardware, width: Get.width * 0.50, onpress: () {
+                          
+                        },))
               ],
             ),
             Spacer(),

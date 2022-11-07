@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../const/app_colors.dart';
-import '../../const/app_string.dart';
 
-Widget outlinedButton(String title, {IconData? iconData,required double width}) {
+import '../../const/app_colors.dart';
+
+Widget outlinedButton(String title,
+    {IconData? iconData, required double width, required VoidCallback onpress}) {
   return SizedBox(
     height: 40,
-    width:width,
+    width: width,
     child: OutlinedButton(
-      onPressed: () {},
+      onPressed: onpress,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

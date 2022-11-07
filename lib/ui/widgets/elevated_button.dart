@@ -7,6 +7,9 @@ Widget elevatedButton(String title) {
     height: 40,
     width: Get.width * 0.5,
     child: ElevatedButton(
+      onHover: (value) {
+        
+      },
         style: ElevatedButton.styleFrom(
           shape: StadiumBorder(),
           backgroundColor: AppColors.mainColor,
