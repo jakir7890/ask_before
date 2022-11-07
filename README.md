@@ -2,4 +2,4 @@
 
 A new Flutter project.
 
-<img src = "ss/img.jpg", width = 500>
+<img src = "ss/img.jpg" width = 500>
