@@ -9,18 +9,20 @@ Widget outlinedButton(String title,
     width: width,
     child: OutlinedButton(
       onPressed: onpress,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            iconData,
-            color: AppColors.mainColor,
-          ),
-          Text(
-            title,
-            style: TextStyle(color: AppColors.mainColor),
-          ),
-        ],
+      child: FittedBox(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              iconData,
+              color: AppColors.mainColor,
+            ),
+            Text(
+              title,
+              style: TextStyle(color: AppColors.mainColor),
+            ),
+          ],
+        ),
       ),
       style: OutlinedButton.styleFrom(
         side: const BorderSide(width: 2.5, color: AppColors.mainColor),

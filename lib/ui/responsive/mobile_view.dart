@@ -3,6 +3,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../../const/app_colors.dart';
 import '../../const/app_string.dart';
 import '../widgets/outlined_button.dart';
@@ -32,7 +34,7 @@ class _MobileViewState extends State<MobileView> {
                 outlinedButton(
                   AppConstant.topRightButtonText,
                   width: Get.width * 0.4,
-                  onpress: () {},
+                  onpress: _launchUrl,
                 )
               ],
             ),
@@ -51,8 +53,8 @@ class _MobileViewState extends State<MobileView> {
               ),
             ),
             Tooltip(
-              margin: EdgeInsets.only(left: 150),
-              verticalOffset: 70,
+              margin: EdgeInsets.only(left: 280),
+              verticalOffset: 140,
               height: 40,
               preferBelow: false,
               decoration: BoxDecoration(
@@ -61,14 +63,14 @@ class _MobileViewState extends State<MobileView> {
                       topLeft: Radius.circular(15),
                       bottomLeft: Radius.circular(15),
                       bottomRight: Radius.circular(15))),
-              message: '✅ Copy Text ✅',
+              message: ' Copy Text ',
               child: Card(
                 elevation: 3,
                 shape: StadiumBorder(),
                 child: Container(
                   padding: EdgeInsets.all(20),
                   width: Get.width * 0.9,
-                  height: Get.height * 0.2,
+                  height: Get.height * 0.4,
                   decoration: BoxDecoration(
                       color: AppColors.pureWhite,
                       borderRadius: BorderRadius.circular(30)),
@@ -114,13 +116,22 @@ class _MobileViewState extends State<MobileView> {
             ),
             Spacer(),
             FittedBox(
-                child: Text(
-              AppConstant.lowerText,
-              style: TextStyle(color: AppColors.mainColor),
+                child: TextButton(
+              onPressed: _launchUrl,
+              child: Text(
+                AppConstant.lowerText,
+                style: TextStyle(color: AppColors.mainColor),
+              ),
             ))
           ],
         ),
       ),
     );
+  }
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(AppConstant.webUrl)) {
+      throw 'Could not launch ${AppConstant.webUrl}}';
+    }
   }
 }

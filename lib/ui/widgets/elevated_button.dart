@@ -7,17 +7,17 @@ Widget elevatedButton(String title) {
     height: 40,
     width: Get.width * 0.5,
     child: ElevatedButton(
-      onHover: (value) {
-        
-      },
+        onHover: (value) {},
         style: ElevatedButton.styleFrom(
           shape: StadiumBorder(),
           backgroundColor: AppColors.mainColor,
         ),
         onPressed: () {},
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Icon(Icons.copy_rounded), Text(title)],
+        child: FittedBox(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Icon(Icons.copy_rounded), Text(title)],
+          ),
         )),
   );
 }

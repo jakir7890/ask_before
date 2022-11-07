@@ -35,6 +35,7 @@ dependencies:
   get: ^4.6.5
   auto_size_text: ^3.0.0
   fluttertoast: ^8.1.1
+  url_launcher: ^6.1.6
 
 dev_dependencies:
   flutter_test:

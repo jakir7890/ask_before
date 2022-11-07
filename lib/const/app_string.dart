@@ -16,4 +16,7 @@ class AppConstant {
     'What did you feel unqualified to do for work? How did you respond to the challenge?'
   ];
   static const lowerText = 'Made with love by TimeWell';
+  static final Uri webUrl = Uri.parse('https://www.timewell.io/');
+  
+
 }
